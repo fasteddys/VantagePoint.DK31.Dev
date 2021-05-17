@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Auto Column Width";
+}
+
+@section Head {
+}
+
+@section ContentHeader {
+    <h1>@ViewData["Title"]<small></small></h1>
+}
+
+<div class="alert alert-info alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <p>AutoColumnWidthMixin auto sizes grid columns based on visible content. It runs at every data load by default, 
+       so currently all columns are auto sized, though it can be configured to auto size only once, or never.
+       Change active page to see auto sizing in action.</p>
+    <p>User can also double click between columns to auto size one manually if desired. Ctrl+Click auto sizes
+       all columns. </p>
+    <p>The mixin provides many options to control auto sizing behavior, like auto sizing on load, min and
+       max auto column widths, ignoring headers, max rows to calc, using widths defined in Columns.cs if any etc.</p>
+
+    <p style="text-align: right;"><b>Source Files:</b> 
+        @Html.PremiumSourceFile("Index.cshtml"), 
+        @Html.PremiumSourceFile("AutoColumnWidthGrid.ts"),
+        @{await Html.RenderPartialAsync("~/Modules/AdvancedSamples/PremiumSourceWarning.cshtml");}
+    </p>
+</div>
+
+<div id="GridDiv"></div>
+
+<script type="text/javascript">
+    jQuery(function () {
+        new VantagePoint.AdvancedSamples.AutoColumnWidthGrid($('#GridDiv'));
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+</script>

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<VantagePoint.Northwind.Entities.ProductRow>
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@{
+    ViewBag.Title = "Products";
+}
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Product List</h3>
+        <div class="box-tools">
+            @Html.PagedListPager((IPagedList)ViewBag.PagedList, page => Url.Action("BootstrapFormList", new { page = page }))
+        </div>
+    </div>
+    <div class="box-body no-padding">
+        <div style="margin: 6px">
+            @Html.ActionLink("New Product", "BootstrapFormEdit", null, new { @class = "btn btn-primary" })
+        </div>
+        <table class="table table-striped">
+        <tr>
+            <th>Product Name</th>
+            <th style="width: 100px;">Discontinued</th>
+            <th>Supplier</th>
+            <th>Category</th>
+            <th>Unit Price</th>
+            <th>Units in Stock</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            string rowClass = "";
+            if (item.ProductID == ViewBag.ProductID)
+            {
+                rowClass = "success";
+            }
+            <tr class="@rowClass">
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td class="align-center">
+                    @(item.Discontinued == true ? "yes" : "")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SupplierCompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitsInStock)
+                </td>
+                <td>
+                    @Html.ActionLink("Select", "BootstrapFormList", new { productID = item.ProductID }) |
+                    @Html.ActionLink("Edit", "BootstrapFormEdit", new { productID = item.ProductID })
+                </td>
+            </tr>
+        }
+        </table>
+    </div>
+</div>

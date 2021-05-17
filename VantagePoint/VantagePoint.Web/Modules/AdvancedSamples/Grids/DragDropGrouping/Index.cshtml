@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Draggable Grouping";
+}
+
+@section Head {
+}
+
+@section ContentHeader {
+    <h1>@ViewData["Title"]<small></small></h1>
+}
+
+<div class="alert alert-info alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <p>Draggable grouping mixin allows you to group by any column by dragging its header into the target (blue) area.</p>
+    <p>You may also set which columns should be grouped initially by adding [GroupOrder] attributes to them in your Columns.cs</p>
+    <p style="text-align: right;"><b>Source Files:</b> 
+        @Html.PremiumSourceFile("Index.cshtml"), 
+        @Html.PremiumSourceFile("DragDropGroupingGrid.ts"),
+        @{await Html.RenderPartialAsync("~/Modules/AdvancedSamples/PremiumSourceWarning.cshtml");}
+    </p>
+</div>
+
+<div id="GridDiv"></div>
+
+<script type="text/javascript">
+    jQuery(function () {
+        new VantagePoint.AdvancedSamples.DragDropGroupingGrid($('#GridDiv'));
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+</script>

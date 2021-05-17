@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Excel Style Filters";
+}
+
+@section Head {
+}
+
+@section ContentHeader {
+    <h1>@ViewData["Title"]<small></small></h1>
+}
+
+<div class="alert alert-info alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <p>Here is how you could use Excel style column filtering. Click on filter icon next to column headers.</p>
+    <p>Distinct column values are fetched from server side, so it displays all values even when data is paged.</p>
+
+    <p style="text-align: right;"><b>Source Files:</b> 
+        @Html.PremiumSourceFile("Index.cshtml"), 
+        @Html.PremiumSourceFile("ExcelStyleFiltersGrid.ts"),
+        @{await Html.RenderPartialAsync("~/Modules/AdvancedSamples/PremiumSourceWarning.cshtml");}
+    </p>
+</div>
+
+<div id="GridDiv"></div>
+
+<script type="text/javascript">
+    jQuery(function () {
+        new VantagePoint.AdvancedSamples.ExcelStyleFiltersGrid($('#GridDiv'));
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+</script>

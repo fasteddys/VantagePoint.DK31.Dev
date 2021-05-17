@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Product Picker";
+}
+
+@section Head {
+}
+
+@section ContentHeader {
+    <h1>@ViewData["Title"]<small></small></h1>
+}
+
+<div class="alert alert-info alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <p>This is a modified version of Northwind Order dialog that provides a Product Picker for selecting products to add details.</p>
+    <p>Open an order record and click <b>Pick Products</b> button.</p>
+
+    <p style="text-align: right;"><b>Source Files:</b> 
+        @Html.PremiumSourceFile("Index.cshtml"),
+        @Html.PremiumSourceFile("PickerOrderDetailsEditor.ts"), 
+        @Html.PremiumSourceFile("PickerOrderDialog.ts"),
+        @Html.PremiumSourceFile("PickerOrderForm.cs"),
+        @Html.PremiumSourceFile("PickerOrderGrid.ts"),
+        @Html.PremiumSourceFile("ProductCheckGrid.ts"),
+        @Html.PremiumSourceFile("ProductPickerDialog.ts")
+        @{await Html.RenderPartialAsync("~/Modules/AdvancedSamples/PremiumSourceWarning.cshtml");}
+    </p>
+</div>
+
+<div id="GridDiv"></div>
+
+<script type="text/javascript">
+    jQuery(function () {
+        new VantagePoint.AdvancedSamples.PickerOrderGrid($('#GridDiv'));
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+</script>

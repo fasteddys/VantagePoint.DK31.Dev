@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Order Wizard";
+}
+
+@section Head {
+}
+
+@section ContentHeader {
+    <h1>@ViewData["Title"]<small></small></h1>
+}
+
+<div class="alert alert-info alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <p>Here is a wizard sample that demonstrates how to create a step by step interface for creating an order.</p>
+    <p>Wizard allows you to choose an existing customer or create a new one on the fly.</p>
+    <p>This is based on WizardDialog premium widget, which uses Tab attributes defined on a Form class, 
+       to auto create steps</p>
+
+    <p style="text-align: right;"><b>Source Files:</b> 
+        @Html.PremiumSourceFile("Index.cshtml"),
+        @Html.PremiumSourceFile("OrderWizardForm.cs"),
+        @Html.PremiumSourceFile("OrderWizard.ts"),
+        @Html.PremiumSourceFile("../../../Common/Premium/WizardDialog.ts")
+        @{await Html.RenderPartialAsync("~/Modules/AdvancedSamples/PremiumSourceWarning.cshtml");}
+    </p>
+</div>
+
+<div class="panels-container">
+</div>
+
+<script type="text/javascript">
+    jQuery(function () {
+        var dlg = new VantagePoint.AdvancedSamples.OrderWizard();
+        dlg.element.one('dialogclose panelclose', () => {
+            // navigate to order page, otherwise we'll have an empty page after dialog closes
+            window.location.href = Q.resolveUrl("~/Northwind/Order");
+        });
+        dlg.dialogOpen();
+    });
+</script>

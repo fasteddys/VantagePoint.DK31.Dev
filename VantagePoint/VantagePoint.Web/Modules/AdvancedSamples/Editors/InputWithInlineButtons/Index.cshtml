@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Inputs with Inline Action Buttons";
+}
+
+@section Head {
+}
+
+@section ContentHeader {
+    <h1>@ViewData["Title"]<small></small></h1>
+}
+
+<div class="alert alert-info alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <p>Demonstrates how to develop a custom editor with inline buttons</p>
+    <p>There is also another sample on adding an action button from dialog, without having to declare a new editor class</p>
+
+    <p style="text-align: right;"><b>Source Files:</b> 
+        @Html.PremiumSourceFile("Index.cshtml")
+        @{await Html.RenderPartialAsync("~/Modules/AdvancedSamples/PremiumSourceWarning.cshtml");}
+    </p>
+</div>
+
+<script type="text/javascript">
+    jQuery(function () {
+        var dlg = new VantagePoint.AdvancedSamples.InlineButtonsDialog();
+        dlg.dialogOpen(true);
+    });
+</script>

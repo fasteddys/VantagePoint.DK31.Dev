@@ -1,0 +1,41 @@
+﻿@model IEnumerable<VantagePoint.Northwind.Entities.CustomerRow>
+
+@{
+    ViewData["Title"] = "Idle (Session) Timeout";
+}
+
+@section ContentHeader {
+    <h1>@ViewData["Title"]<small></small></h1>
+}
+
+<div class="alert alert-info alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <p>In this page we show an idle (session) timeout warning.</p>
+    <p>For demonstration purposes, activity timeout is set to 45 seconds and a warning is shown in 30 seconds.</p>
+    <p>Don't touch your mouse or press a key for 15 seconds, and you'll get a timeout warning.</p>
+    <p>After that you'll have 30 seconds to click <b>Stay Logged In</b> button or you'll be signed out.</p>
+
+    <p style="text-align: right;"><b>Source Files:</b> 
+        @Html.PremiumSourceFile("IdleTimeoutIndex.cshtml")
+        @{await Html.RenderPartialAsync("~/Modules/AdvancedSamples/PremiumSourceWarning.cshtml");}
+    </p>
+
+    <script type="text/javascript">
+        $(function () {
+            // note: ScriptInitialization.ts already has default setup, don't use this one in production!
+            new Serenity.IdleTimeout({
+                activityTimeout: 45,
+                warningDuration: 30,
+                // disabled signout url for demonstration
+                signoutUrl: null,
+                // used only for demonstration purposes, don't use
+                beforeSignout: function () {
+                    localStorage.removeItem("IdleTimeout:Signout");
+                    localStorage.setItem("IdleTimeout:LastActivity", $.now().toString());
+                    Q.alert("If this wasn't a demo, you would be signed out now!");
+                }
+            });
+        });
+    </script>
+</div>
+

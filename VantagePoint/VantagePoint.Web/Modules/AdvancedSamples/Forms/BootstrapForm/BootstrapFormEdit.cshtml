@@ -1,0 +1,96 @@
+﻿@model VantagePoint.AdvancedSamples.BootstrapFormViewModel
+
+@{
+    ViewData["Title"] = "Bootstrap Form";
+}
+
+@section Head {
+<style>
+    section.content { background-color: #fff; }
+    .validation-summary-errors ul { margin: 10px; }
+</style>
+@Html.Script("~/Scripts/jquery.validate.unobtrusive.min.js")
+}
+
+<div class="box box-info">
+    <div class="box-header with-border">
+        <h3 class="box-title">@(ViewBag.ProductID == null ? "New Product" : ("Edit Product (" + Model.ProductName + ")"))</h3>
+    </div>
+    @using (Html.BeginForm("BootstrapFormEdit", "AdvancedSamples", new { productID = ViewBag.ProductID == null ? "" : ViewBag.ProductID }, FormMethod.Post, false, new { @class = "form-horizontal" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="box-body">
+            <div class="form-group">
+                @Html.LabelFor(x => x.ProductName, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.ProductName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBoxFor(x => x.Discontinued) Discontinued
+                        </label>
+                        @Html.ValidationMessageFor(x => x.Discontinued, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.SupplierID, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(x => x.SupplierID, null, "--select--", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.SupplierID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.CategoryID, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(x => x.CategoryID, null, "--select--", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.CategoryID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.QuantityPerUnit, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.QuantityPerUnit, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.QuantityPerUnit, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.UnitPrice, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.UnitPrice, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.UnitsInStock, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.UnitsInStock, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.UnitsInStock, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.UnitsOnOrder, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.UnitsOnOrder, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.UnitsOnOrder, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.ReorderLevel, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.ReorderLevel, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.ReorderLevel, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="box-footer">
+            <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-save"></i> Save</button>
+            <a class="btn btn-danger" href="~/AdvancedSamples/BootstrapFormList "><i class="fa fa-arrow-left"></i> Back To List</a>
+        </div>
+    }
+</div>

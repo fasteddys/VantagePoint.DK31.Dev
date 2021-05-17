@@ -1,0 +1,79 @@
+﻿@model IEnumerable<VantagePoint.Northwind.Entities.CustomerRow>
+
+@{
+    ViewData["Title"] = "DataTables.js - Server Side Data Source";
+}
+
+@section ContentHeader {
+    <h1>@ViewData["Title"]<small></small></h1>
+}
+
+<div class="alert alert-info alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <p>This sample demonstrates how you could use popular DataTables plugin instead of integrated SlickGrid when desired. In this sample, we handle paging / sorting etc. on
+    server side by implementing the services DataTables plugin expects.</p>
+
+    <p style="text-align: right;"><b>Source Files:</b> 
+        @Html.PremiumSourceFile("BasicInit.cshtml")
+        @Html.PremiumSourceFile("AdvancedSamplesPage.DataTables.ts")
+        @{await Html.RenderPartialAsync("~/Modules/AdvancedSamples/PremiumSourceWarning.cshtml");}
+    </p>
+</div>
+
+@section Head {
+    @Html.Script("~/Scripts/datatables/jquery.dataTables.js")
+    @Html.Script("~/Scripts/datatables/dataTables.bootstrap.js")
+    @Html.Stylesheet("~/Scripts/datatables/dataTables.bootstrap.css")
+
+    <style>
+        section.content { background-color: #fff; }
+    </style>
+}
+
+<table id="example" class="table table-striped table-bordered" cellspacing="0">
+    <thead>
+    @{var fld = VantagePoint.Northwind.Entities.CustomerRow.Fields; }
+    <tr>
+        <th>@fld.CustomerID.Title</th>
+        <th>@fld.CompanyName.Title</th>
+        <th>@fld.ContactName.Title</th>
+        <th>@fld.ContactTitle.Title</th>
+        <th>@fld.Country.Title</th>
+        <th>@fld.City.Title</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="6" class="dataTables_empty">Loading data from server</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>@fld.CustomerID.Title</th>
+            <th>@fld.CompanyName.Title</th>
+            <th>@fld.ContactName.Title</th>
+            <th>@fld.ContactTitle.Title</th>
+            <th>@fld.Country.Title</th>
+            <th>@fld.City.Title</th>
+        </tr>
+    </tfoot>
+</table>
+
+<script>
+    $('#example').DataTable({
+        bProcessing: true,
+        bServerSide: true,
+        ajax: {
+            url: "@Url.Content("~/AdvancedSamples/ServerSideSource")",
+            type: "POST"
+        },
+        columns: [
+            { data: "CustomerID" },
+            { data: "CompanyName" },
+            { data: "ContactName" },
+            { data: "ContactTitle" },
+            { data: "Country" },
+            { data: "City" }
+        ]
+    });
+</script>

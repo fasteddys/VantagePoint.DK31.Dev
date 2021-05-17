@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Multi Date Picker";
+}
+
+@section Head {
+    @Html.Stylesheet("~/Content/jquery-ui.multidatespicker.css")
+    @Html.Script("~/Scripts/jquery-ui.multidatespicker.js")
+    <style>.panel-titlebar-close { display: none; }</style>
+}
+
+@section ContentHeader {
+    <h1>@ViewData["Title"]<small></small></h1>
+}
+
+<div class="alert alert-info alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <p>Demonstrates how to integrate a third party extension for multiple date selection</p>
+    <p>See documentation for the control at http://dubrox.github.io/Multiple-Dates-Picker-for-jQuery-UI/</p>
+
+    <p style="text-align: right;"><b>Source Files:</b> 
+        @Html.PremiumSourceFile("Index.cshtml")
+        @Html.PremiumSourceFile("MultiDatesPickerDialog.ts")
+        @Html.PremiumSourceFile("MultiDatesPickerEditor.ts")
+        @Html.PremiumSourceFile("MultiDatesPickerForm.cs")
+        @{await Html.RenderPartialAsync("~/Modules/AdvancedSamples/PremiumSourceWarning.cshtml");}
+    </p>
+</div>
+
+<div class="panels-container">
+
+</div>
+
+<script type="text/javascript">
+    jQuery(function () {
+        var dlg = new VantagePoint.AdvancedSamples.MultiDatesPickerDialog();
+        dlg.dialogOpen();
+    });
+</script>

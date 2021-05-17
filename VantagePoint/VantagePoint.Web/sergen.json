@@ -1,0 +1,10 @@
+﻿{
+  "RootNamespace": "VantagePoint",
+  "ServerTypings": {
+    "Assemblies": [],
+    "LocalTexts": true
+  },
+  "Connections": [],
+  "BaseRowClasses": [],
+  "RemoveForeignFields": []
+}
