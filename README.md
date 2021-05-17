@@ -1,4 +1,4 @@
-# VantagePoint.SP3134.Dev
+# VantagePoint.DK31.Dev
 Vantage Development Workspace.
 
 Based on Serenity Pro (StartSharp) 3.13.4.
