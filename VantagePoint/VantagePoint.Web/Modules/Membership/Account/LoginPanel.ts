@@ -9,15 +9,15 @@
             super(container);
 
             $.fn['vegas'] && $('body')['vegas']({
-                delay: 30000,
+                delay: 11000,
                 cover: true,
                 overlay: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACAQMAAABIeJ9nAAAAA3NCSVQICAjb4U" +
                     "/gAAAABlBMVEX///8AAABVwtN+AAAAAnRSTlMA/1uRIrUAAAAJcEhZcwAAAsQAAALEAVuRnQsAAAAWdEVYdENyZWF0" +
                     "aW9uIFRpbWUAMDQvMTMvMTGrW0T6AAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M1cbXjNgAAAAxJREFUCJljaGBgAAABhACBrONIPgAAAABJRU5ErkJggg==",
                 slides: [
-                    { src: Q.resolveUrl("~/Content/site/slides/slide1.jpg"), transition: 'fade' },
-                    { src: Q.resolveUrl("~/Content/site/slides/slide2.jpg"), transition: 'zoomOut' },
-                    { src: Q.resolveUrl("~/Content/site/slides/slide3.jpg"), transition: 'swirlLeft' }
+                    { src: Q.resolveUrl("~/Content/site/slides/slide-9.jpg"), transition: 'zoomOut' },
+                    { src: Q.resolveUrl("~/Content/site/slides/slide-19.jpg"), transition: 'swirlLeft' },
+                    { src: Q.resolveUrl("~/Content/site/slides/slide-30.jpg"), transition: 'zoomOut' }
                 ]
             });
 

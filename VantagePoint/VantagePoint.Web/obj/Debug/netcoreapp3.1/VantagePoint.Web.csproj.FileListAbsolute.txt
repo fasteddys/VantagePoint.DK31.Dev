@@ -519,3 +519,4 @@ C:\Users\esgrd\source\repos\VantagePoint.DK31.Dev\VantagePoint\VantagePoint.Web\
 C:\Users\esgrd\source\repos\VantagePoint.DK31.Dev\VantagePoint\VantagePoint.Web\obj\Debug\netcoreapp3.1\VantagePoint.Web.dll
 C:\Users\esgrd\source\repos\VantagePoint.DK31.Dev\VantagePoint\VantagePoint.Web\obj\Debug\netcoreapp3.1\VantagePoint.Web.pdb
 C:\Users\esgrd\source\repos\VantagePoint.DK31.Dev\VantagePoint\VantagePoint.Web\obj\Debug\netcoreapp3.1\VantagePoint.Web.genruntimeconfig.cache
+C:\Users\esgrd\source\repos\VantagePoint.DK31.Dev\VantagePoint\VantagePoint.Web\obj\Debug\netcoreapp3.1\VantagePoint.Web.csprojAssemblyReference.cache

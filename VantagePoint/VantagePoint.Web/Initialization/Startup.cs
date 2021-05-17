@@ -32,7 +32,21 @@ namespace VantagePoint
             HostEnvironment = hostEnvironment;
             SqlSettings.AutoQuotedIdentifiers = true;
             RegisterDataProviders();
+
+            //PWK: Initializing BackgroundTaskManager
+            //InitializeBackgroundTasks();
         }
+
+        //PWK: Put back above to enable background tasks 
+        //public void InitializeBackgroundTasks()
+        //{
+        //    PeriodicBackgroundTask ltask = new PrototypeB.Web.Backend.Jobs.ScheduledConf();
+
+        //    BackgroundTaskManager.Register(task:ltask);
+        //    BackgroundTaskManager.Initialize();
+
+        //}
+
 
         public IConfiguration Configuration { get; }
         public IWebHostEnvironment HostEnvironment { get; }
@@ -102,6 +116,11 @@ namespace VantagePoint
             services.AddSingleton<IUserRetrieveService, Administration.UserRetrieveService>();
             services.AddSingleton<IPermissionService, Administration.PermissionService>();
             services.AddSingleton<Administration.ISMSService, Administration.FakeSMSService>();
+
+            //PWK Services - DI with no external container
+            //services.AddSingleton<IKeyholderRepository, KeyholderRepository>();
+            //services.AddSingleton<IProductRepository, ProductRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

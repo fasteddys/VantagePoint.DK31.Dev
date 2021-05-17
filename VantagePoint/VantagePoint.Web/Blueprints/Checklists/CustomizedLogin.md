@@ -3,12 +3,12 @@ Check-list to customize Login-panel: Background slides/effects, Welcome text and
 
 
 1. Updating Welcome Text in Login Panel
-- Search for "Text.cs" in Solution Explorer
+- Search for "Texts.cs" in Solution Explorer
 - Find the "Login" class
 - Update the text on "FormTitle" or any other property that you need
 
 2. Updating Background images in Login Panel (slides)
-- Search for "BuildupSDK.Web.js" in Solution Explorer
+- Search for "LoginPanel.ts" in Solution Explorer
 - Find the "LoginPanel" function
 - Adjust the "delay" parameter to change the waiting time for the nexte slide at login (numbers in miliseconds)
 - Change the "overlay" image (encoded in base64) to adjust the filter over the background slides.
@@ -30,3 +30,4 @@ Foot-notes:
 
 Sign-off:
 Jan-4/2021: emmanuel.sosa@planetaweb.do
+May-17th/2021: due corrections

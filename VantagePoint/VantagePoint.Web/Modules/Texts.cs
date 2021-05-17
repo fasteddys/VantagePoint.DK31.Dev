@@ -56,7 +56,7 @@ namespace VantagePoint
 
                 public static class Login
                 {
-                    public static LocalText FormTitle = "Welcome to START# (Serenity Application Template)";
+                    public static LocalText FormTitle = "Welcome to VantagePoint";
                     public static LocalText SignInButton = "Sign In";
                     public static LocalText ForgotPassword = "Forgot password?";
                     public static LocalText SignUpButton = "Register a new account";
@@ -251,8 +251,8 @@ namespace VantagePoint
 
             public static class Layout
             {
-                public static LocalText FooterCopyright = "Copyright (c) 2015.";
-                public static LocalText FooterInfo = "Serenity Platform";
+                public static LocalText FooterCopyright = "Copyright (c) PWS 2021.";
+                public static LocalText FooterInfo = "Planeta Web Services";
                 public static LocalText FooterRights = "All rights reserved.";
                 public static LocalText GeneralSettings = "General Settings";
                 public static LocalText Language = "Language";

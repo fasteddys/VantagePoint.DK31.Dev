@@ -4482,3 +4482,30 @@ declare namespace VantagePoint.Organization {
         constructor(container: JQuery);
     }
 }
+declare namespace Serenity.Common {
+    interface BackgroundTaskLogRow {
+        LogId?: number;
+        TaskKey?: string;
+        RunAt?: string;
+        Status?: number;
+        Server?: string;
+        Message?: string;
+    }
+    namespace BackgroundTaskLogRow {
+        const idProperty = "LogId";
+        const nameProperty = "TaskKey";
+        const localTextPrefix = "Common.BackgroundTaskLog";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            LogId = "LogId",
+            TaskKey = "TaskKey",
+            RunAt = "RunAt",
+            Status = "Status",
+            Server = "Server",
+            Message = "Message"
+        }
+    }
+}
