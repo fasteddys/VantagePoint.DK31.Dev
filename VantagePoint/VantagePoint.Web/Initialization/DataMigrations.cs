@@ -184,11 +184,12 @@ namespace VantagePoint
 
             // safety check to ensure that we are not modifying an arbitrary database.
             // remove these lines if you want VantagePoint migrations to run on your DB.
+            // PWK: Detective story below to understand why it was skipping on my first try
             if (!isOracle && cs.ConnectionString.IndexOf(typeof(DataMigrations).Namespace +
                     @"_" + databaseKey + "_v1", StringComparison.OrdinalIgnoreCase) < 0)
             {
-                SkippedMigrations = true;
-                return;
+                //SkippedMigrations = true;
+                //return;
             }
 
             string databaseType = isOracle ? "OracleManaged" : serverType;

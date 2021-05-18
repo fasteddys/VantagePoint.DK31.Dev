@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "y4jD21He29AzoSWpi7VSjuvtvB6S//hjQDvPdHQAolUgB0/GIHGPewBQ1DR2rJn61Uhj5LVa0L5jwga2E+13ig==",
+  "dgSpecHash": "imsw7GUTNgC/keBsEWoVDAgFYjqFI70OPwzgOxLmMvUbBhlgtqXe5IgWKTzaV8nu9SgcAqkkFTAm1pHrfZf+Hw==",
   "success": true,
   "projectFilePath": "C:\\Users\\esgrd\\source\\repos\\VantagePoint.DK31.Dev\\VantagePoint\\VantagePoint.Web\\VantagePoint.Web.csproj",
   "expectedPackageFiles": [
@@ -50,6 +50,7 @@
     "C:\\Users\\esgrd\\.nuget\\packages\\netstandard.library\\1.6.0\\netstandard.library.1.6.0.nupkg.sha512",
     "C:\\Users\\esgrd\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\esgrd\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
+    "C:\\Users\\esgrd\\.nuget\\packages\\npgsql\\5.0.5\\npgsql.5.0.5.nupkg.sha512",
     "C:\\Users\\esgrd\\.nuget\\packages\\nuglify\\1.5.13\\nuglify.1.5.13.nupkg.sha512",
     "C:\\Users\\esgrd\\.nuget\\packages\\portable.bouncycastle\\1.8.5\\portable.bouncycastle.1.8.5.nupkg.sha512",
     "C:\\Users\\esgrd\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
@@ -131,7 +132,7 @@
     "C:\\Users\\esgrd\\.nuget\\packages\\system.reflection.typeextensions\\4.3.0\\system.reflection.typeextensions.4.3.0.nupkg.sha512",
     "C:\\Users\\esgrd\\.nuget\\packages\\system.resources.resourcemanager\\4.3.0\\system.resources.resourcemanager.4.3.0.nupkg.sha512",
     "C:\\Users\\esgrd\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
-    "C:\\Users\\esgrd\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\esgrd\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512",
     "C:\\Users\\esgrd\\.nuget\\packages\\system.runtime.extensions\\4.3.0\\system.runtime.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\esgrd\\.nuget\\packages\\system.runtime.handles\\4.3.0\\system.runtime.handles.4.3.0.nupkg.sha512",
     "C:\\Users\\esgrd\\.nuget\\packages\\system.runtime.interopservices\\4.3.0\\system.runtime.interopservices.4.3.0.nupkg.sha512",
