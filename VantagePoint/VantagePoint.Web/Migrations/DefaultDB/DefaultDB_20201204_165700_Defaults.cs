@@ -1,7 +1,7 @@
 ﻿using FluentMigrator;
 using System;
 
-namespace PrototypeB.Migrations.DefaultDB
+namespace VantagePoint.Migrations.DefaultDB
 {
 
     [Migration(20201204165700)]
@@ -11,7 +11,7 @@ namespace PrototypeB.Migrations.DefaultDB
         {
 
             // Application Configuration
-            this.Create.Table("Defaults")
+            Create.Table("Defaults")
                 .WithColumn("Id").AsInt32().PrimaryKey().Identity()
                 .WithColumn("Name").AsString(90).NotNullable()
                 .WithColumn("Datatype").AsString(40).NotNullable()
