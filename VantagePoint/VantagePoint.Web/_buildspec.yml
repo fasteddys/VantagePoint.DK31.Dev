@@ -1,0 +1,31 @@
+﻿version: 0.2
+phases:
+  install:
+    runtime-versions:
+      dotnet: 3.1
+      nodejs: 12
+
+  pre_build:
+    commands:
+      - ECR_URI=436687949241.dkr.ecr.us-east-2.amazonaws.com
+      - IMAGE_NAME="vantagepoint"
+      - echo Installing AWS Tools..
+      - dotnet tool install -g Amazon.ECS.Tools
+      - apt update
+      - apt --assume-yes install nodejs npm
+
+  build:
+    commands:
+    - echo Build Started on 'date'
+    - cd ./Vantage_ES/VANTAGE/VANTAGE.Web
+    - npm install
+    - dotnet ecs push-image $REPOSITORY_URI --tag $IMAGE_NAME
+
+  post_build:
+    commands:
+    - echo Writing Image Definitions file
+    - printf '[{"name":"VANTAGEWeb13","imageUri":"%s"}]' $ECR_URI/$IMAGE_NAME > imagedefinitions.json
+
+artifacts:
+  files: ./Vantage_ES/VANTAGE/VANTAGE.Web/imagedefinitions.json
+  discard-paths: yes

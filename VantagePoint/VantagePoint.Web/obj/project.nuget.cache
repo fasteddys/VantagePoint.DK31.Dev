@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "imsw7GUTNgC/keBsEWoVDAgFYjqFI70OPwzgOxLmMvUbBhlgtqXe5IgWKTzaV8nu9SgcAqkkFTAm1pHrfZf+Hw==",
+  "dgSpecHash": "VNBzET0PARjoWkrpxxm7RiwmAGy7+AZVJVz7wjvgNyWk2TkH8KKpbCfW+EOMSBTIoZQb2p4qOtkjCGsf/byuwg==",
   "success": true,
   "projectFilePath": "C:\\Users\\esgrd\\source\\repos\\VantagePoint.DK31.Dev\\VantagePoint\\VantagePoint.Web\\VantagePoint.Web.csproj",
   "expectedPackageFiles": [
@@ -43,6 +43,7 @@
     "C:\\Users\\esgrd\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\esgrd\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\esgrd\\.nuget\\packages\\microsoft.typescript.msbuild\\3.7.4\\microsoft.typescript.msbuild.3.7.4.nupkg.sha512",
+    "C:\\Users\\esgrd\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\esgrd\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\esgrd\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\esgrd\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
