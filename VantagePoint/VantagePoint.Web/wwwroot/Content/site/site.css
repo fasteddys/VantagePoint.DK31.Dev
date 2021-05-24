@@ -9067,6 +9067,12 @@ i.premium-feature,
   padding: 2px 4px;
   border: 1px solid #a3b2d2;
 }
+.s-Administration-TenantDialog > .size {
+  width: 650px;
+}
+.s-Administration-TenantDialog .caption {
+  width: 150px;
+}
 .view-switch {
   position: relative;
   top: -12px;

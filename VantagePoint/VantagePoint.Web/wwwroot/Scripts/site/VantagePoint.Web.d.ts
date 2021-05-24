@@ -281,6 +281,66 @@ declare namespace VantagePoint.Administration {
     }
 }
 declare namespace VantagePoint.Administration {
+}
+declare namespace VantagePoint.Administration {
+    interface TenantForm {
+        Name: Serenity.StringEditor;
+        Tier: Serenity.StringEditor;
+        Domain: Serenity.StringEditor;
+        Created: Serenity.DateEditor;
+        Modified: Serenity.DateEditor;
+    }
+    class TenantForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace VantagePoint.Administration {
+    interface TenantRow {
+        TenantId?: string;
+        Name?: string;
+        Tier?: string;
+        Domain?: string;
+        Created?: string;
+        Modified?: string;
+    }
+    namespace TenantRow {
+        const idProperty = "TenantId";
+        const nameProperty = "Name";
+        const localTextPrefix = "Administration.Tenant";
+        const deletePermission = "Administration:Tenant";
+        const insertPermission = "Administration:Tenant";
+        const readPermission = "Administration:Tenant";
+        const updatePermission = "Administration:Tenant";
+        const enum Fields {
+            TenantId = "TenantId",
+            Name = "Name",
+            Tier = "Tier",
+            Domain = "Domain",
+            Created = "Created",
+            Modified = "Modified"
+        }
+    }
+}
+declare namespace VantagePoint.Administration {
+    namespace TenantService {
+        const baseUrl = "Administration/Tenant";
+        function Create(request: Serenity.SaveRequest<TenantRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<TenantRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TenantRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TenantRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Administration/Tenant/Create",
+            Update = "Administration/Tenant/Update",
+            Delete = "Administration/Tenant/Delete",
+            Retrieve = "Administration/Tenant/Retrieve",
+            List = "Administration/Tenant/List"
+        }
+    }
+}
+declare namespace VantagePoint.Administration {
     interface TranslationItem {
         Key?: string;
         SourceText?: string;
@@ -857,6 +917,33 @@ declare namespace VantagePoint.BasicSamples {
         static formKey: string;
         private static init;
         constructor(prefix: string);
+    }
+}
+declare namespace Serenity.Common {
+    interface BackgroundTaskLogRow {
+        LogId?: number;
+        TaskKey?: string;
+        RunAt?: string;
+        Status?: number;
+        Server?: string;
+        Message?: string;
+    }
+    namespace BackgroundTaskLogRow {
+        const idProperty = "LogId";
+        const nameProperty = "TaskKey";
+        const localTextPrefix = "Common.BackgroundTaskLog";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            LogId = "LogId",
+            TaskKey = "TaskKey",
+            RunAt = "RunAt",
+            Status = "Status",
+            Server = "Server",
+            Message = "Message"
+        }
     }
 }
 declare namespace VantagePoint.Common {
@@ -2692,6 +2779,30 @@ declare namespace VantagePoint.Administration {
     }
 }
 declare namespace VantagePoint.Administration {
+    class TenantDialog extends Serenity.EntityDialog<TenantRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: TenantForm;
+    }
+}
+declare namespace VantagePoint.Administration {
+    class TenantGrid extends Serenity.EntityGrid<TenantRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TenantDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace VantagePoint.Administration {
     class TranslationGrid extends Serenity.EntityGrid<TranslationItem, any> {
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
@@ -4480,32 +4591,5 @@ declare namespace VantagePoint.Organization {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
-    }
-}
-declare namespace Serenity.Common {
-    interface BackgroundTaskLogRow {
-        LogId?: number;
-        TaskKey?: string;
-        RunAt?: string;
-        Status?: number;
-        Server?: string;
-        Message?: string;
-    }
-    namespace BackgroundTaskLogRow {
-        const idProperty = "LogId";
-        const nameProperty = "TaskKey";
-        const localTextPrefix = "Common.BackgroundTaskLog";
-        const deletePermission = "Administration:General";
-        const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
-        const updatePermission = "Administration:General";
-        const enum Fields {
-            LogId = "LogId",
-            TaskKey = "TaskKey",
-            RunAt = "RunAt",
-            Status = "Status",
-            Server = "Server",
-            Message = "Message"
-        }
     }
 }

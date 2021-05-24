@@ -1,10 +1,24 @@
-﻿{
+{
   "RootNamespace": "VantagePoint",
   "ServerTypings": {
     "Assemblies": [],
     "LocalTexts": true
   },
-  "Connections": [],
+  "Connections": [
+    {
+      "Key": "Default",
+      "Tables": [
+        {
+          "Tablename": "public.Tenant",
+          "Identifier": "Tenant",
+          "Module": "Administration",
+          "PermissionKey": "Administration:Tenant"
+        }
+      ]
+    }
+  ],
   "BaseRowClasses": [],
-  "RemoveForeignFields": []
+  "RemoveForeignFields": [],
+  "CustomGenerate": {},
+  "CustomSettings": {}
 }
