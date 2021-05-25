@@ -223,6 +223,13 @@ namespace VantagePoint.Administration.Repositories
                 {
                     Row.Source = "site";
                     Row.IsActive = Row.IsActive ?? 1;
+
+                    if (!Authorization.HasPermission(Administration.PermissionKeys.Tenant) ||
+                        Row.TenantId == null)
+                    {
+                        Row.TenantId = ((UserDefinition)Authorization.UserDefinition)
+                            .TenantId;
+                    }
                 }
 
                 if (IsCreate || !Row.Password.IsEmptyOrNull())
@@ -301,6 +308,16 @@ namespace VantagePoint.Administration.Repositories
                                 Request.ClientHash, entity.Username);
                 }
             }
+
+            // Multitenant filtering
+            protected override void ApplyFilters(SqlQuery query)
+            {
+                base.ApplyFilters(query);
+
+                var user = (UserDefinition)Authorization.UserDefinition;
+                if (!Authorization.HasPermission(PermissionKeys.Tenant))
+                    query.Where(fld.TenantId == user.TenantId);
+            }
         }
 
         private static string GetImpersonationToken(IDataProtector dataProtector, byte[] clientHash, string username)
@@ -324,5 +341,7 @@ namespace VantagePoint.Administration.Repositories
                     return Uri.EscapeDataString(token);
                 });
         }
+
+        
     }
 }

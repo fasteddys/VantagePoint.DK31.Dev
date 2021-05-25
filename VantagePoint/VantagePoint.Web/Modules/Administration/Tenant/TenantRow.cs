@@ -17,6 +17,7 @@ namespace VantagePoint.Administration.Entities
     public sealed class TenantRow : Row, INameRow, IIdRow
     {
         [DisplayName("Tenant Id"), PrimaryKey]
+        [ReadPermission(PermissionKeys.Tenant)]
         public Guid TenantId
         {
             get { return (Guid)Fields.TenantId[this]; }

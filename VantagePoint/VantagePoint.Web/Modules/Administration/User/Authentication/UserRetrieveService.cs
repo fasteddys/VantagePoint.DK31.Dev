@@ -30,7 +30,10 @@ namespace VantagePoint.Administration
                     PasswordHash = user.PasswordHash,
                     PasswordSalt = user.PasswordSalt,
                     UpdateDate = user.UpdateDate,
-                    LastDirectoryUpdate = user.LastDirectoryUpdate
+                    LastDirectoryUpdate = user.LastDirectoryUpdate,
+
+                    //Multitenant selection
+                    TenantId = user.TenantId.Value
                 };
 
             return null;

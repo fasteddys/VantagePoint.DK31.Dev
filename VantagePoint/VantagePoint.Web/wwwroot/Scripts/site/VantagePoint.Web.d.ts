@@ -2844,6 +2844,7 @@ declare namespace VantagePoint.Administration {
         protected getToolbarButtons(): Serenity.ToolButton[];
         protected updateInterface(): void;
         protected afterLoadEntity(): void;
+        protected getPropertyItems(): Serenity.PropertyItem[];
     }
 }
 declare namespace VantagePoint.Administration {
