@@ -13,5 +13,8 @@ namespace VantagePoint.Administration
 
         [Description("Languages and Translations")]
         public const string Translation = "Administration:Translation";
+
+        [Description("Tenants, SaaS Tenants")]
+        public const string Tenant = "Administration:Tenant";
     }
 }

@@ -309,6 +309,8 @@ declare namespace VantagePoint.Administration {
         const idProperty = "TenantId";
         const nameProperty = "Name";
         const localTextPrefix = "Administration.Tenant";
+        const lookupKey = "Administration.Tenant";
+        function getLookup(): Q.Lookup<TenantRow>;
         const deletePermission = "Administration:Tenant";
         const insertPermission = "Administration:Tenant";
         const readPermission = "Administration:Tenant";
@@ -393,6 +395,7 @@ declare namespace VantagePoint.Administration {
         Password: Serenity.PasswordEditor;
         PasswordConfirm: Serenity.PasswordEditor;
         Source: Serenity.StringEditor;
+        TenantId: Serenity.LookupEditor;
     }
     class UserForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -529,6 +532,8 @@ declare namespace VantagePoint.Administration {
         Password?: string;
         PasswordConfirm?: string;
         ImpersonationToken?: string;
+        TenantId?: string;
+        TenantName?: string;
         InsertUserId?: number;
         InsertDate?: string;
         UpdateUserId?: number;
@@ -562,6 +567,8 @@ declare namespace VantagePoint.Administration {
             Password = "Password",
             PasswordConfirm = "PasswordConfirm",
             ImpersonationToken = "ImpersonationToken",
+            TenantId = "TenantId",
+            TenantName = "TenantName",
             InsertUserId = "InsertUserId",
             InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",

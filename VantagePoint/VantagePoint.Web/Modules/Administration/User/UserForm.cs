@@ -21,5 +21,6 @@ namespace VantagePoint.Administration.Forms
         public String PasswordConfirm { get; set; }
         [OneWay]
         public string Source { get; set; }
+        public Guid? TenantId { get; set; }
     }
 }

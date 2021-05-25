@@ -11,8 +11,9 @@ namespace VantagePoint.Administration.Entities
 
     [ConnectionKey("Default"), Module("Administration"), TableName("[public].[Tenant]")]
     [DisplayName("Tenant"), InstanceName("Tenant")]
-    [ReadPermission("Administration:Tenant")]
-    [ModifyPermission("Administration:Tenant")]
+    [ReadPermission(PermissionKeys.Tenant)]
+    [ModifyPermission(PermissionKeys.Tenant)]
+    [LookupScript("Administration.Tenant")]
     public sealed class TenantRow : Row, INameRow, IIdRow
     {
         [DisplayName("Tenant Id"), PrimaryKey]
@@ -22,7 +23,7 @@ namespace VantagePoint.Administration.Entities
             set { Fields.TenantId[this] = value; }
         }
 
-        [DisplayName("Name"), Size(90), NotNull, QuickSearch]
+        [DisplayName("Name"), Size(90), NotNull, QuickSearch, LookupInclude]
         public String Name
         {
             get { return Fields.Name[this]; }

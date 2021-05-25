@@ -126,6 +126,22 @@ namespace VantagePoint.Administration.Entities
             set { Fields.ImpersonationToken[this] = value; }
         }
 
+        // Multitenant selection
+        [DisplayName("Tenant"), ForeignKey("Tenant", "TenantId"), LeftJoin("tnt")]
+        [LookupEditor(typeof(TenantRow))]
+        public Guid? TenantId
+        {
+            get { return Fields.TenantId[this]; }
+            set { Fields.TenantId[this] = value; }
+        }
+
+        [NotMapped, MinSelectLevel(SelectLevel.Explicit), DisplayName("Tenant"), Expression("tnt.TenantName")]
+        public String TenantName
+        {
+            get { return Fields.TenantName[this]; }
+            set { Fields.TenantName[this] = value; }
+        }
+
         IIdField IIdRow.IdField
         {
             get { return Fields.UserId; }
@@ -168,6 +184,10 @@ namespace VantagePoint.Administration.Entities
             public StringField PasswordConfirm;
 
             public StringField ImpersonationToken;
+
+            // Multitenant selection
+            public readonly GuidField TenantId;
+            public readonly StringField TenantName;
         }
     }
 }
