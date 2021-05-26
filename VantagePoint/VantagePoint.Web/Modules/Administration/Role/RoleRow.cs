@@ -56,6 +56,7 @@ namespace VantagePoint.Administration.Entities
             public Int32Field RoleId;
             public StringField RoleName;
             public StringField RoleKey;
+            //public GuidField TenantId;
         }
     }
 }

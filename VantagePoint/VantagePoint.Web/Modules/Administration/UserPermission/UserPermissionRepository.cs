@@ -241,6 +241,8 @@ namespace VantagePoint.Administration.Repositories
                     }
                 }
 
+                // VP1: Hiding Tenant Adm from Permission Keys
+                result.Remove(Administration.PermissionKeys.Tenant);
                 result.Remove("ImpersonateAs");
                 result.Remove("*");
                 result.Remove("?");

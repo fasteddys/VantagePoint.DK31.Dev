@@ -11,7 +11,7 @@ namespace VantagePoint.Administration.Entities
     [ReadPermission(PermissionKeys.Translation)]
     [ModifyPermission(PermissionKeys.Translation)]
     [LookupScript(typeof(Lookups.LanguageLookup))]
-    public sealed class LanguageRow : Row, IIdRow, INameRow
+    public sealed class LanguageRow : Row, IIdRow, INameRow, IMultiTenantRow
     {
         [DisplayName("Id"), Identity]
         public Int32? Id
@@ -33,6 +33,12 @@ namespace VantagePoint.Administration.Entities
             get { return Fields.LanguageName[this]; }
             set { Fields.LanguageName[this] = value; }
         }
+
+        //VP1: Multitenant Behavior
+        public GuidField TenantId
+        {
+            get { return Fields.TenantId; }
+        } //
 
         IIdField IIdRow.IdField
         {
@@ -56,6 +62,10 @@ namespace VantagePoint.Administration.Entities
             public Int32Field Id;
             public StringField LanguageId;
             public StringField LanguageName;
+
+            //VP1: Multitenant Behavior
+            public GuidField TenantId; //
+
         }
     }
 }
