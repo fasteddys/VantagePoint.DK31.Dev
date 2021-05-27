@@ -5,8 +5,8 @@ using VantagePoint.Administration.Entities;
 
 namespace VantagePoint.Administration.Lookups
 {
-    [LookupScript]
-    public sealed class LanguageLookup : RowLookupScript<LanguageRow>
+    [LookupScript] // VP1: Multitenant Lookup Script
+    public sealed class LanguageLookup : MultiTenantRowLookupScript<LanguageRow> //
     {
         public LanguageLookup()
         {
@@ -19,6 +19,9 @@ namespace VantagePoint.Administration.Lookups
             base.PrepareQuery(query);
 
             query.Select(LanguageRow.Fields.LanguageId);
+
+            //VP1: Multitenant Lookup Script
+            AddTenantFilter(query); //
         }
     }
 }

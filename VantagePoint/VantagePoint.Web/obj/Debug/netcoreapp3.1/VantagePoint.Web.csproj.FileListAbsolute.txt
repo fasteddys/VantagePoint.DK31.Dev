@@ -522,3 +522,4 @@ C:\Users\esgrd\source\repos\VantagePoint.DK31.Dev\VantagePoint\VantagePoint.Web\
 C:\Users\esgrd\source\repos\VantagePoint.DK31.Dev\VantagePoint\VantagePoint.Web\obj\Debug\netcoreapp3.1\VantagePoint.Web.csprojAssemblyReference.cache
 C:\Users\esgrd\source\repos\VantagePoint.DK31.Dev\VantagePoint\VantagePoint.Web\bin\Debug\netcoreapp3.1\Npgsql.dll
 C:\Users\esgrd\source\repos\VantagePoint.DK31.Dev\VantagePoint\VantagePoint.Web\obj\Debug\netcoreapp3.1\Razor\Modules\Administration\Tenant\TenantIndex.cshtml.g.cs
+C:\Users\esgrd\source\repos\VantagePoint.DK31.Dev\VantagePoint\VantagePoint.Web\obj\Debug\netcoreapp3.1\Razor\Modules\Vantage\Defaults\DefaultsIndex.cshtml.g.cs

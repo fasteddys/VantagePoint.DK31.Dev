@@ -2699,6 +2699,66 @@ declare namespace VantagePoint {
 }
 declare namespace VantagePoint.Texts {
 }
+declare namespace VantagePoint.Vantage {
+}
+declare namespace VantagePoint.Vantage {
+    interface DefaultsForm {
+        Name: Serenity.StringEditor;
+        Datatype: Serenity.StringEditor;
+        Value: Serenity.StringEditor;
+        Class: Serenity.StringEditor;
+        Scope: Serenity.StringEditor;
+    }
+    class DefaultsForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace VantagePoint.Vantage {
+    interface DefaultsRow {
+        Id?: number;
+        Name?: string;
+        Datatype?: string;
+        Value?: string;
+        Class?: string;
+        Scope?: string;
+    }
+    namespace DefaultsRow {
+        const idProperty = "Id";
+        const nameProperty = "Name";
+        const localTextPrefix = "Vantage.Defaults";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            Id = "Id",
+            Name = "Name",
+            Datatype = "Datatype",
+            Value = "Value",
+            Class = "Class",
+            Scope = "Scope"
+        }
+    }
+}
+declare namespace VantagePoint.Vantage {
+    namespace DefaultsService {
+        const baseUrl = "Vantage/Defaults";
+        function Create(request: Serenity.SaveRequest<DefaultsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<DefaultsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DefaultsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DefaultsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Vantage/Defaults/Create",
+            Update = "Vantage/Defaults/Update",
+            Delete = "Vantage/Defaults/Delete",
+            Retrieve = "Vantage/Defaults/Retrieve",
+            List = "Vantage/Defaults/List"
+        }
+    }
+}
 declare namespace VantagePoint.Administration {
     class DataAuditLogDialog extends Serenity.EntityDialog<DataAuditLogRow, any> {
         protected getFormKey(): string;
@@ -4596,6 +4656,30 @@ declare namespace VantagePoint.Organization {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof ContactDialog;
         protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace VantagePoint.Vantage {
+    class DefaultsDialog extends Serenity.EntityDialog<DefaultsRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: DefaultsForm;
+    }
+}
+declare namespace VantagePoint.Vantage {
+    class DefaultsGrid extends Serenity.EntityGrid<DefaultsRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof DefaultsDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);

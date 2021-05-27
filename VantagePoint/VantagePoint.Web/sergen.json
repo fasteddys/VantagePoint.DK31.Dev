@@ -9,6 +9,12 @@
       "Key": "Default",
       "Tables": [
         {
+          "Tablename": "public.Defaults",
+          "Identifier": "Defaults",
+          "Module": "Vantage",
+          "PermissionKey": "Administration:General"
+        },
+        {
           "Tablename": "public.Tenant",
           "Identifier": "Tenant",
           "Module": "Administration",

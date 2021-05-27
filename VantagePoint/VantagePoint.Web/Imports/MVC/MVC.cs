@@ -502,5 +502,14 @@ namespace MVC
             public const string LeftNavigation = "~/Views/Shared/LeftNavigation.cshtml";
         }
 
+        public static class Vantage
+        {
+            public static class Defaults
+            {
+                public const string DefaultsIndex = "~/Modules/Vantage/Defaults/DefaultsIndex.cshtml";
+            }
+
+        }
+
     }
 }

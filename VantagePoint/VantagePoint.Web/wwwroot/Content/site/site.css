@@ -10830,6 +10830,12 @@ button.ui-button {
 .inline-action.add-child-unit {
   background-image: url(../serenity/images/node-insert-next.png);
 }
+.s-Vantage-DefaultsDialog > .size {
+  width: 650px;
+}
+.s-Vantage-DefaultsDialog .caption {
+  width: 150px;
+}
 .s-Toolbar button .button-inner {
   display: inline-block;
   min-height: 24px;
